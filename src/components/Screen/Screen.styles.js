@@ -24,12 +24,11 @@ export const ContentWrapper = styled.div`
   border-radius: 0.5rem;
   padding: 2rem;
   display: grid;
-  grid-template-rows: 50% repeat(2, max-content);
+  grid-template-rows: 60% repeat(2, max-content);
   align-items: center;
   justify-items: center;
-  font-family: "8bit";
   opacity: 0;
-  animation: fadeIn 0.7s forwards steps(2);
+  animation: fadeIn 0.7s forwards steps(4);
 `;
 
 export const Title = styled.h1`
@@ -39,21 +38,23 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
-export const Stats = styled.div``;
-export const Stat = styled.p`
-  text-align: center;
-  color: white;
-  font-size: 1.2rem;
-  padding: 0.3rem;
+export const Stats = styled.div`
 `;
-export const Image = styled.img``;
+export const Stat = styled.p`
+text-align: center;
+color: white;
+font-size: 1.2rem;
+padding: 0.3rem;
+`;
+export const Image = styled.img`
+  width: 15rem;
+`;
 
 // Not found screen
 export const FlexWrapper = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: 0.5rem;
-  font-family: "8bit";
+  border-radius: 0.5rem; 
   display: flex;
   align-items: center;
   justify-content: center;

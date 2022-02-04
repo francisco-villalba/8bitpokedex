@@ -7,21 +7,21 @@ import LoadingScreen from './LoadingScreen';
 
 const Screen = () => {
     const {data, loading} = useContext(AppContext)
-    
-    if(data.error) {
-        return <NotFoundScreen />
+
+    if(!data.name && !data.error) {
+        return <Base />
     }
     
     else if(loading) {
         return <LoadingScreen />
     }
 
-    else if(data.name) {
-        return <ContentScreen />
+    else if(data.error) {
+        return <NotFoundScreen />
     }
 
-    else {
-        return <Base />
+    else if(data.name) {
+        return <ContentScreen />
     }
 }
 

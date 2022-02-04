@@ -8,7 +8,7 @@ const Navigation = () => {
   const inputRef = useRef()
 
   const handleSearch = (query) => {
-    if(query === '') { query = 'asdassd'}
+    if(query === '') { query = ' '}
     fetchPokemon(query)
     inputRef.current.value = ''
   }

@@ -5,8 +5,7 @@ import {
   Stat,
   Stats,
   Title,
-  Image,
-  Static,
+  Image
 } from "./Screen.styles";
 import Base from "./Base";
 

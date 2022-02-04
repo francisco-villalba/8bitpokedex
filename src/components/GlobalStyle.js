@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-import PressStart from '../font/PressStart2P.ttf';
+import font from '../font/PressStart2P.woff2'
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: "8bit";
-        src: url(${PressStart}) format("truetype");
+        src: url(${font}) format('woff2');
     }
 
     * {
@@ -15,55 +15,52 @@ const GlobalStyle = createGlobalStyle`
 
     html {
         box-sizing: border-box;
-        font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+        font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px;
 
-        /* @media only screen and (max-width: $bp-largest) {
-            font-size: 50%;
-        } */
+        @media only screen and (min-width: 1500px) {
+            font-size: 70%;
+        }
     }
 
     body {
         background-color: #f44336;
+        font-family: "8bit";
     }
 
     .container {
         display: grid;
-        grid-template-rows: 10rem 1fr;
-        justify-items: center; 
+        min-height: 100vh;
+        align-content: center;
+        justify-content: center;
+
+        @media only screen and (max-width: 540px) {
+            min-height: auto;
+            align-content: start;
+        }
     }
 
-    // Custom animations
-    @keyframes blink {
-        0% {
-            transform: scale(1);
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
         }
 
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes blink {
+        0% {
+           transform: scale(1); 
+        }
         50% {
             transform: scale(1.1);
         }
-
         100% {
             transform: scale(1); 
         }
     }
 
-    @keyframes fadeIn {
-        50% {
-            opacity: .5;
-        }
-    
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @media only screen and (max-width: 540px) {
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-`;
+`
 
 export default GlobalStyle;
