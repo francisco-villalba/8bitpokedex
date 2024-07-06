@@ -6,7 +6,7 @@ export const AppProvider = ({ children }) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const fetchPokemon = async (query = "asdsad") => {
+  const fetchPokemon = async (query) => {
     setLoading(true);
 
     try {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
@@ -30,6 +30,7 @@ export const Button = styled.button`
     font-weight: bold;
     font-size: 1.5rem;
     transition: .5s;
+    color: var(--var-color-dark);
 
     :active {
         background-color: #fff;

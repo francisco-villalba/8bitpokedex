@@ -15,7 +15,7 @@ export const Static = styled.img`
   height: 100%;
   z-index: 1000;
   opacity: .1;
-  filter: brightness(15);
+  /* filter: brightness(15); */
 `
 // Content Screen
 export const ContentWrapper = styled.div`

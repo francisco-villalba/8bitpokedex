@@ -3,21 +3,25 @@ import { AppContext } from "../../context";
 import { Wrapper, Input, Button } from "./Navigation.styles";
 
 const Navigation = () => {
-  const randomNum = () => Math.round(Math.random() * 898);
+  const randomNum = () => Math.round(Math.random() * 898).toString();
   const {fetchPokemon} = useContext(AppContext)
   const inputRef = useRef()
 
-  const handleSearch = (query) => {
-    if(query === '') { query = ' '}
+  const handleSearch = (e, query) => {
+    e.preventDefault()
+
+    query = query.trim().toLowerCase()
+    
     fetchPokemon(query)
+
     inputRef.current.value = ''
   }
 
   return (
     <Wrapper>
-      <Input ref={inputRef} />
-      <Button color="#4CAF50" onClick={ () => { handleSearch(inputRef.current.value.toLowerCase()) }}>Search</Button>
-      <Button color="#008CBA" onClick={ () => { handleSearch(randomNum()) }}>Random</Button>
+      <Input ref={inputRef} required={true} />
+      <Button color="#4CAF50" onClick={ (e) => { handleSearch(e, inputRef.current.value) }}>Search</Button>
+      <Button color="#008CBA" onClick={ (e) => { handleSearch(e, randomNum()) }}>Random</Button>
     </Wrapper>
   );
 };

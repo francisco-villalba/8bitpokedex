@@ -7,6 +7,11 @@ const GlobalStyle = createGlobalStyle`
         src: url(${font}) format('woff2');
     }
 
+    :root {
+        --var-bg-color: #f44336;
+        --var-color-dark: #000;
+    }
+
     * {
         margin: 0;
         padding: 0;
@@ -23,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: #f44336;
+        background-color: var(--var-bg-color);
         font-family: "8bit";
     }
 
